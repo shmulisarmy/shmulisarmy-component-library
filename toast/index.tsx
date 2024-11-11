@@ -80,7 +80,7 @@ function Toast({toast, index, isHovering}: {toast: Toast, index: () => number, i
                 : `translateY(-${20 + index() * 66}px)`,
         }}
     >
-            {svgs[toast.type]}
+            {svgs[toast.type]()}
         <p>
 
     {toast.message}
