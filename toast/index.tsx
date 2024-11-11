@@ -14,11 +14,11 @@ const [toasts, setToasts] = createSignal<Toast[]>([
   { id: 4, message: "is", type: "success" },
 ]);
 
-const addToast = () => {
+export const addToast = (type: string) => {
     const newMessage = prompt("Enter message: ");
     if (newMessage) {
       setToasts((prev) => [
-        { id: prev.length, message: newMessage, type: "success" },
+        { id: prev.length, message: newMessage, type },
         ...prev,
       ]);
     }
@@ -47,7 +47,9 @@ const Toaster: Component = () => {
 
   return (
     <>
-      <button onClick={addToast}>Add Toast</button>
+      <button onClick={() => addToast("success")}>Add success Toast</button> 
+      <button onClick={() => addToast("warning")}>Add warning Toast</button> 
+      <button onClick={() => addToast("error")}>Add error Toast</button>
       <button onClick={clearToasts}>Clear All</button>
 
       <div
