@@ -3,12 +3,7 @@ import { createSignal, For } from "solid-js";
 import styles from "./.module.css";
 import svgs from "./svgs";
 import { s } from "vite/dist/node/types.d-aGj9QkWt";
-
-type Toast = {
-  id: number;
-  message: string;
-  type: string;
-};
+import type { Toast } from "./types";
 
 // Initial toasts data
 const [toasts, setToasts] = createSignal<Toast[]>([
