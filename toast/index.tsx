@@ -79,8 +79,8 @@ function Toast({toast, index, isHovering}: {toast: Toast, index: () => number, i
         style={{
             "z-index": 7 - index(),
             transform: !isHovering()
-                ? `translateY(-${20 + index() * 5}px) scale(${0.91 - index() * 0.04})`
-                : `translateY(-${20 + index() * 100}px)`,
+                ? `translateY(-${20 + index() * 5}px) scale(${0.93 - index() * 0.02})`
+                : `translateY(-${20 + index() * 66}px)`,
         }}
     >
             {svgs[toast.type]}
