@@ -15,7 +15,6 @@
             --nav-indent: 16px;
             --nav-width-collapsed: 50px;
             --nav-width-expanded: 160px;
-            --inner-fill: var(--primary-color3);
         }
 
         .dark-mode {
@@ -43,7 +42,10 @@
             height: 100vh;
             padding: var(--nav-indent);
             border-right: 1px solid var(--border-color);
-            transition: width 0.4s ease-in-out;
+            transition: width 0.6s ease-in-out;
+
+            --inner-fill: var(--background-color);
+
         }
 
         nav svg {
@@ -52,11 +54,12 @@
             margin-bottom: var(--nav-indent);
             fill: var(--color);
             cursor: pointer;
+            transition: fill 0.6s ease-in-out;
         }
 
         nav svg:hover {
             fill: var(--primary-color3);
-            --inner-fill: var(--color);
+            --inner-fill: var(--background-color);
 
         }
 
@@ -120,7 +123,7 @@
 
         main {
             padding: 20px;
-            transition: margin-left 0.4s ease-in-out;
+            transition: margin-left 0.6s ease-in-out;
         }
 
         section {
@@ -242,5 +245,13 @@
         </section>
 
     </main>
+
+    <script>
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                document.querySelector("nav").blur()
+            }
+        })
+    </script>
 </body>
 </html>

@@ -1,8 +1,7 @@
-import { render } from "solid-js/web";
-import nav from "./index";
+import { render } from "solid-testing-library";
+import App from "./index";
 
-describe("nav component", () => {
-  test("it renders without crashing", () => {
-    render(() => <nav />);
-  });
+test("it should render the app", () => {
+  const { getByText } = render(() => <App />);
+  expect(getByText("Welcome to Our Website")).toBeTruthy();
 });
