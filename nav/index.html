@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --background-color: #f5f5f5;
+            --color: #333;
+            --border-color: var(--background-color);
+            --primary-color: #007bff;
+
+            --nav-indent: 16px;
+            --primary-color2: #4a90e2
+        }
+        .dark-mode {
+            --background-color: #333;
+            --color: #f5f5f5;
+        }
+        body{
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        nav{
+            position: fixed;;
+            left: 0;
+            top: 0;
+          
+            display: flex;
+            flex-direction: column; /* Fixed this line */
+            background-color: var(--background-color);
+            color: var(--color);
+            width: 50px;
+            height: 100vh;
+            padding: var(--nav-indent); ;
+
+            border-right: 1px solid var(--border-color);
+
+        
+
+
+            svg{
+                float: left;
+                /* padding: calc(var(--nav-indent) / 2); */
+                padding-bottom: var(--nav-indent);
+                width: 100%;
+            }
+            svg:hover{
+                cursor: pointer;
+                background-color: var(--primary-color);
+            }
+            
+        }
+        .header{
+                    display: none;
+                }
+        @media (min-width: 600px) {
+            nav{
+
+
+                &:focus{
+                cursor: pointer;
+                width: 160px;
+                transition: .5s ease-in-out;
+                .header{
+                    display: block;
+                }
+
+            }
+            }
+
+            main{
+                margin-left: calc(50px + var(--nav-indent)*2);
+            }
+            nav:focus~main{
+            margin-left: 160px;
+            transition: .5s ease-in-out;
+        }
+        }
+
+        @media (max-width: 600px) {
+            nav{
+                bottom: 0;
+                top: unset;
+                width: 100%;
+                height: 50px;
+                flex-direction: row;
+                transition: 0s;
+
+            }
+        }
+
+    
+
+        main{
+            padding: 20px;
+
+     
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <nav tabindex="0">
+
+         <h1 class="header">Notes</h1>
+
+        <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l8 8-1.4 1.4L12 5.8 5.4 12.4 4 11l8-8zM5 10v10h4v-6h6v6h4V10h2v12H3V10h2z" fill="var(--primary-color2)"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.43 12.98l1.94-1.62-2.34-4.06-2.2 1.07a7.19 7.19 0 0 0-1.58-.94L15 3h-6l-.27 4.43a7.19 7.19 0 0 0-1.58.94L4.95 7.3 2.61 11.36l1.94 1.62c-.05.31-.05.64 0 .96l-1.94 1.62 2.34 4.06 2.2-1.07c.45.3.94.54 1.58.94L9 21h6l.27-4.43a7.19 7.19 0 0 0 1.58-.94l2.2 1.07 2.34-4.06-1.94-1.62c.05-.32.05-.65 0-.96zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" fill="var(--primary-color2)"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="var(--primary-color2)"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.85 2.85a3.5 3.5 0 0 1 0 4.95l-1.27 1.27 2.12 2.12 1.27-1.27a3.5 3.5 0 0 1 4.95 4.95l-6.59 6.59a1 1 0 0 1-1.41 0l-8.58-8.58a1 1 0 0 1 0-1.41l6.59-6.59a3.5 3.5 0 0 1 4.95 0zM4 20a1 1 0 0 1 1.42 0l5.58 5.58a1 1 0 0 1-1.41 1.42L4 20.42a1 1 0 0 1 0-1.42zm2-6h4v2H6v-2zm0 4h4v2H6v-2z" fill="var(--primary-color2)"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="var(--primary-color2)"/>
+            <path d="M12 6a6 6 0 1 0 0 12V6z" fill="#ffffff"/>
+        </svg>
+    </nav>
+    <main>
+        <section>
+            <h1>Welcome to Our Website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tristique ligula. Quisque euismod ante nec eros vulputate, ac suscipit dui tincidunt.</p>
+        </section>
+        
+        <section>
+            <h2>Our Mission</h2>
+            <p>Our mission is to create a seamless user experience while providing exceptional content and tools for our users. We strive for excellence in everything we do.</p>
+            <ul>
+                <li>Quality Content</li>
+                <li>Exceptional Tools</li>
+                <li>Customer Satisfaction</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Featured Articles</h2>
+            <article>
+                <h3>How to Build a Better Web Experience</h3>
+                <p>Building a great web experience requires the right mix of design, functionality, and content. In this article, we explore best practices for achieving this.</p>
+            </article>
+            <article>
+                <h3>Why Performance Matters</h3>
+                <p>Performance is key to a smooth and enjoyable web experience. In this article, we explain how to optimize performance for your users.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Latest News</h2>
+            <p>Stay up-to-date with our latest updates and announcements. Here’s what's new:</p>
+            <ul>
+                <li>New Feature Launch: User Analytics</li>
+                <li>Performance Update: Faster Load Times</li>
+                <li>Improved Mobile Experience</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us. We're always here to help!</p>
+            <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+        </section>
+    </main>
+</body>
+</html>

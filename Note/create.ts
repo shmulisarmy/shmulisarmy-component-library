@@ -2,7 +2,11 @@ import { createMutable } from "solid-js/store";
 
 import type { NoteProps } from "./types";
 
-
+const localStorage = {
+    getItem: (key: string) => {
+        return "[]"
+    }
+}
 
 export default function create_note(localStorageName : string = "note") {
     if (localStorage.getItem(localStorageName) !== null) {
@@ -13,8 +17,10 @@ export default function create_note(localStorageName : string = "note") {
     content: "",
     id: 0,
     color: "orange",
-    localStorageName: localStorageName,
+    localStorageName: localStorageName, 
     position: { x: 0, y: 0 },
     unsaved: false
 })
 }
+
+
